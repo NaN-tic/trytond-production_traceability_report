@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<tryton>
+    <data>
+        <!-- production.traceability.report -->
+        <record model="ir.action.report" id="report_production_traceability">
+            <field name="name">Traceability</field>
+            <field name="report_name">production.traceability.report</field>
+            <field name="report">production_traceability_report/report/production_traceability_report.html</field>
+            <field name="extension">html</field>
+            <field name="template_extension">jinja</field>
+        </record>
+
+        <record model="ir.ui.view" id="print_production_traceability_start_view_form">
+            <field name="model">production.traceability.start</field>
+            <field name="type">form</field>
+            <field name="name">production_traceability_start_form</field>
+        </record>
+
+        <record model="ir.action.wizard" id="print_production_traceability">
+            <field name="name">Traceability</field>
+            <field name="wiz_name">production.print_traceability</field>
+        </record>
+
+        <record model="ir.action.keyword" id="print_production_traceability_template_keyword">
+            <field name="keyword">form_print</field>
+            <field name="model">product.template,-1</field>
+            <field name="action" ref="print_production_traceability"/>
+        </record>
+
+        <record model="ir.action.keyword" id="print_production_traceability_product_keyword">
+            <field name="keyword">form_print</field>
+            <field name="model">product.product,-1</field>
+            <field name="action" ref="print_production_traceability"/>
+        </record>
+
+        <menuitem parent="production.menu_production" action="print_production_traceability" id="menu_production_traceability"/>
+    </data>
+
+    <data depends="stock_lot">
+        <record model="ir.ui.view" id="print_production_traceability_lot_view_form">
+            <field name="model">production.traceability.start</field>
+            <field name="inherit" ref="production_traceability_report.print_production_traceability_start_view_form"/>
+            <field name="name">production_traceability_lot_form</field>
+        </record>
+
+        <record model="ir.action.keyword" id="print_production_traceability_lot_keyword">
+            <field name="keyword">form_print</field>
+            <field name="model">stock.lot,-1</field>
+            <field name="action" ref="print_production_traceability"/>
+        </record>
+    </data>
+</tryton>

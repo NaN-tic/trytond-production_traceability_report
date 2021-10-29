@@ -1,0 +1,63 @@
+#
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:production.traceability.start,from_date:"
+msgid "From Date"
+msgstr "Des de"
+
+msgctxt "field:production.traceability.start,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:production.traceability.start,lot:"
+msgid "Lot"
+msgstr "Lot"
+
+msgctxt "field:production.traceability.start,product:"
+msgid "Product"
+msgstr "Producte"
+
+msgctxt "field:production.traceability.start,to_date:"
+msgid "To Date"
+msgstr "Fins"
+
+msgctxt "field:production.traceability.start,direction:"
+msgid "Type"
+msgstr "Tipus"
+
+msgctxt "model:ir.action,name:"
+msgid "Traceability"
+msgstr "Traçabilitat"
+
+msgctxt "model:ir.action,name:print_production_traceability"
+msgid "Traceability"
+msgstr "Traçabilitat"
+
+msgctxt "model:ir.action,name:report_production_traceability"
+msgid "Traceability"
+msgstr "Traçabilitat"
+
+msgctxt "model:ir.ui.menu,name:menu_production_traceability"
+msgid "Traceability"
+msgstr "Traçabilitat"
+
+msgctxt "model:production.traceability.start,name:"
+msgid "Print Production Traceability Start"
+msgstr "Inici imprimir Traçabilitat"
+
+msgctxt "selection:production.traceability.start,direction:"
+msgid "Backward"
+msgstr "Cap enrera"
+
+msgctxt "selection:production.traceability.start,direction:"
+msgid "Forward"
+msgstr "Cap endavant"
+
+msgctxt "wizard_button:production.print_traceability,start,end:"
+msgid "Cancel"
+msgstr "Cancel·la"
+
+msgctxt "wizard_button:production.print_traceability,start,print_:"
+msgid "Print"
+msgstr "Imprimeix"
