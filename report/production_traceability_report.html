@@ -29,6 +29,8 @@
         <tr>
           <td><strong>{{ _('Product') }}:</strong> {{ data['parameters']['requested_product'].rec_name }}</td>
           <td>{% if data['parameters']['lot'] %}<strong>{{ _('Lot') }}:</strong> {{ data['parameters']['lot'].number }}{% endif %}</td>
+          <td>{% if data['parameters']['lot'] %}<strong>{{ _('Expiration Date') }}:</strong> {{ data['parameters']['lot'].expiration_date }}{% endif %}</td>
+
         </tr>
         <tr>
           <td colspan="2">
