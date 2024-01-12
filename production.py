@@ -103,8 +103,7 @@ class PrintProductionTraceabilityStart(ModelView):
             cls.lot = fields.Many2One('stock.lot', 'Lot',
                 domain=[
                     ('product', '=', Eval('product')),
-                    ],
-                depends=['product'])
+                    ])
 
     @staticmethod
     def default_direction():
