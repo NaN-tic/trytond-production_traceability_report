@@ -26,10 +26,6 @@ msgctxt "field:production.traceability.start,direction:"
 msgid "Type"
 msgstr "Tipus"
 
-msgctxt "model:ir.action,name:"
-msgid "Traceability"
-msgstr "Traçabilitat"
-
 msgctxt "model:ir.action,name:print_production_traceability"
 msgid "Traceability"
 msgstr "Traçabilitat"
