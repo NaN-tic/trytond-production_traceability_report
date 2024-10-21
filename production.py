@@ -28,14 +28,14 @@ class Production(metaclass=PoolMeta):
         quantity = 0.0
         for move in getattr(self, 'outputs' if direction == 'backward' else 'inputs'):
             if move.product == requested_product:
-                quantity += Uom.compute_qty(move.uom, move.quantity, move.product.default_uom, False)
+                quantity += Uom.compute_qty(move.unit, move.quantity, move.product.default_uom, False)
 
         moves = {}
         for move in getattr(self, 'inputs' if direction == 'backward' else 'outputs'):
             product = move.product
             lot = move.lot or None if hasattr(move, 'lot') else None
             mqty = Uom.compute_qty(
-                move.uom, move.quantity, move.product.default_uom, False)
+                move.unit, move.quantity, move.product.default_uom, False)
             if moves.get(product):
                 if moves[product].get(lot):
                     moves[product][lot] += mqty
