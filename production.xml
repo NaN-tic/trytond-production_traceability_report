@@ -7,9 +7,8 @@
         <record model="ir.action.report" id="report_production_traceability">
             <field name="name">Traceability</field>
             <field name="report_name">production.traceability.report</field>
-            <field name="report">production_traceability_report/report/production_traceability_report.html</field>
             <field name="extension">html</field>
-            <field name="template_extension">jinja</field>
+            <field name="template_extension">html</field>
         </record>
 
         <record model="ir.ui.view" id="print_production_traceability_start_view_form">
