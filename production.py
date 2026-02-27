@@ -8,7 +8,7 @@ from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Bool, Eval, If
 from trytond.wizard import Wizard, StateView, StateReport, Button
 from trytond.transaction import Transaction
-from trytond.modules.html_report.dominate_report import DominateReportMixin
+from trytond.modules.html_report.dominate_report import DominateReport
 from dominate.util import raw
 from dominate.tags import (a, button, div, h1, i, script, strong, table, tbody,
     td, th, thead, tr)
@@ -160,7 +160,7 @@ class PrintProductionTraceability(Wizard):
         return action, data
 
 
-class PrintProductionTraceabilityReport(DominateReportMixin, metaclass=PoolMeta):
+class PrintProductionTraceabilityReport(DominateReport):
     __name__ = 'production.traceability.report'
 
     @classmethod
