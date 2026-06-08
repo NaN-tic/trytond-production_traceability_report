@@ -9,6 +9,7 @@ from trytond.pyson import Bool, Eval, If
 from trytond.wizard import Wizard, StateView, StateReport, Button
 from trytond.transaction import Transaction
 from trytond.modules.html_report.dominate_report import DominateReport
+from trytond.modules.html_report.engine import render as html_render
 from dominate.util import raw
 from dominate.tags import (a, button, div, h1, i, script, strong, table, tbody,
     td, th, thead, tr)
@@ -258,7 +259,6 @@ class PrintProductionTraceabilityReport(DominateReport):
 
     @classmethod
     def _draw_table(cls, key, values, parameters):
-        render = cls.render
         details_table = table(cls='table collapse multi-collapse', id=key)
         with details_table:
             with tbody():
@@ -278,11 +278,11 @@ class PrintProductionTraceabilityReport(DominateReport):
                                         production.id,
                                         production.rec_name))
                             td('%s %s' % (
-                                render(entry['traceability_quantity'], digits=4),
+                                html_render(entry['traceability_quantity'], digits=4),
                                 entry['traceability_quantity_uom'].symbol),
                                 width='10%')
                             td('%s %s' % (
-                                render(entry['traceability_consumption'], digits=4),
+                                html_render(entry['traceability_consumption'], digits=4),
                                 entry['traceability_consumption_uom'].symbol),
                                 width='10%')
         return details_table
@@ -301,7 +301,6 @@ class PrintProductionTraceabilityReport(DominateReport):
     @classmethod
     def body(cls, action, data, records):
         parameters = data['parameters']
-        render = cls.render
         wrapper = div()
         with wrapper:
             with table(cls='table'):
@@ -345,10 +344,10 @@ class PrintProductionTraceabilityReport(DominateReport):
                         with tr():
                             with td():
                                 strong('From Date:')
-                                raw(' %s' % render(parameters['from_date']))
+                                raw(' %s' % html_render(parameters['from_date']))
                             with td():
                                 strong('To Date:')
-                                raw(' %s' % render(parameters['to_date']))
+                                raw(' %s' % html_render(parameters['to_date']))
                     with tr():
                         with td(colspan='3'):
                             with table(cls='table', id='detail'):
@@ -374,11 +373,11 @@ class PrintProductionTraceabilityReport(DominateReport):
                                                     i(cls='fas fa-angle-double-right')
                                                     raw(' %s' % product.rec_name)
                                             td('%s %s' % (
-                                                render(totals['quantity'], digits=4),
+                                                html_render(totals['quantity'], digits=4),
                                                 totals['quantity_uom'].symbol),
                                                 width='10%')
                                             td('%s %s' % (
-                                                render(totals['consumption'], digits=4),
+                                                html_render(totals['consumption'], digits=4),
                                                 totals['consumption_uom'].symbol),
                                                 width='10%')
                                         with tr():
