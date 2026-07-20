@@ -2,7 +2,7 @@
 # copyright notices and license terms.
 from datetime import datetime
 from collections import OrderedDict
-from trytond.config import config
+import trytond.config as config
 from trytond.model import fields, ModelView
 from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Bool, Eval, If
