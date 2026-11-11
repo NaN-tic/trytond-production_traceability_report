@@ -50,4 +50,10 @@
             <field name="action" ref="print_production_traceability"/>
         </record>
     </data>
+    <data>
+        <record model="ir.action-res.group" id="print_traceability_group_production">
+            <field name="action" ref="print_production_traceability"/>
+            <field name="group" ref="production.group_production"/>
+        </record>
+    </data>
 </tryton>
